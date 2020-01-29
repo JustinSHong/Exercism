@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "resistor_color.h"
 
 // Black: 0
@@ -11,12 +12,20 @@
 // Grey: 8
 // White: 9
 
-// assign a color to an index position
-int color_code(int color)
+int color_code(resistor_band_t color)
 {
-    int color_codes[] = {BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE};
-    return color_codes[color];
+    return color;
 }
 
-// // return an array of integers
-// int colors() {}
+resistor_band_t *colors(void)
+{
+    const int length = color_code(BLACK) + color_code(WHITE);
+    resistor_band_t *band_colors = malloc(length * sizeof(resistor_band_t));
+
+    for (int i = 0; i <= length; i++)
+    {
+        band_colors[i] = i;
+    }
+
+    return band_colors;
+}
