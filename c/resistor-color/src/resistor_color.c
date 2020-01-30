@@ -19,7 +19,7 @@ int color_code(resistor_band_t color)
 
 resistor_band_t *colors(void)
 {
-    const int length = color_code(BLACK) + color_code(WHITE);
+    const int length = color_code(BLACK) + color_code(WHITE) + 1;
     resistor_band_t *band_colors = malloc(length * sizeof(resistor_band_t));
 
     for (int i = 0; i <= length; i++)
