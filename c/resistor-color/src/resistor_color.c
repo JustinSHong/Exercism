@@ -27,5 +27,6 @@ resistor_band_t *colors(void)
         band_colors[i] = i;
     }
 
+    free(band_colors);
     return band_colors;
 }
