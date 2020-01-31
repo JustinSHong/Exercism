@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "resistor_color.h"
 
 // Black: 0
@@ -22,11 +23,10 @@ resistor_band_t *colors(void)
     const int length = color_code(BLACK) + color_code(WHITE) + 1;
     resistor_band_t *band_colors = malloc(length * sizeof(resistor_band_t));
 
-    for (int i = 0; i <= length; i++)
+    for (int i = 0; i < length; i++)
     {
         band_colors[i] = i;
     }
-
     free(band_colors);
     return band_colors;
 }
